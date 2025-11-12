@@ -41,7 +41,8 @@ public class SecurityConfig {
                         "/api/auth/**",
                         "/v3/api-docs/**",       // OpenAPI 3.0 문서 경로
                         "/swagger-ui/**",       // Swagger UI 경로
-                        "/swagger-resources/**" // Swagger 리소스 경로
+                        "/swagger-resources/**", // Swagger 리소스 경로
+                        "/api/products/**" // <-- ★★★ 이 경로를 permitAll에 추가! ★★★
                 ).permitAll()
                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll() // OPTIONS 요청 허용
                 .anyRequest().authenticated() // 나머지 모든 요청은 인증 필요
